@@ -33,6 +33,10 @@ function setup_layers(pScope){
   layer4.mode( RING );
   layer4.set_boundary( 0, 1000 );
 
+  var layer5 = new PLayer(moon);
+  layer5.mode( SWIRL );
+  layer5.set_boundary( 0, 100 );
+
 
 }
 
@@ -51,13 +55,14 @@ function trail(x,y,animation, pScope){
 	scale(1);
 	pScope.draw_image_from_sequence('stars',0,0, animation.frame);
   }
+  function moon(x,y,animation, pScope){
+	fill(255);
+  	ellipse(x,y,0,0);
+  }
 function bang(x,y,animation, pScope){
 
   //at the moment drawing an ellipse and scaling in a wave func to simulate an "explosion"
-  //TODO: replace with still image that expands or frame animation of explosion
   translate(x,y-700);
   scale(.4);
   pScope.draw_image_from_sequence('firework',0,0, animation.frame);//draw bang
 }
-
-//TODO: add twinkling stars in the background..
