@@ -10,12 +10,12 @@ function setup_pScope(pScope){
   pScope.load_image_sequence("firework","png",27);
   pScope.load_image_sequence("sparkle","png",41);
   pScope.load_image_sequence("flare","png",24);
-  pScope.load_image_sequence("stars","png",80);
+  pScope.load_image_sequence("stars","png",3);
 }
 
 function setup_layers(pScope){
 
-  new PLayer(null, 16, 19, 38);  //lets us draw the whole circle background, ignoring the boundaries
+  new PLayer(null, 7, 9, 20);  //lets us draw the whole circle background, ignoring the boundaries
 
   var layer1 = new PLayer(shot);
   layer1.mode( SWIRL(1) );
@@ -48,7 +48,7 @@ function trail(x,y,animation, pScope){
   
   function starry(x,y,animation, pScope){
 	translate(x,y-700);
-	scale(0.4);
+	scale(1);
 	pScope.draw_image_from_sequence('stars',0,0, animation.frame);
   }
 function bang(x,y,animation, pScope){
