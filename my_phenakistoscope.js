@@ -1,13 +1,13 @@
 const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
-  pScope.output_mode(ANIMATED_DISK);
+  pScope.output_mode(ANIMATED_FRAME);
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(true);
   pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
 
-  pScope.load_image("heart_circle","png")
+  pScope.load_image_sequence("firework","png",27);
 }
 
 function setup_layers(pScope){
@@ -38,7 +38,8 @@ function bang(x,y,animation, pScope){
 
   //at the moment drawing an ellipse and scaling in a wave func to simulate an "explosion"
   //TODO: replace with still image that expands or frame animation of explosion
-  pScope.draw_image('heart_circle',0,0);//draw bang
+  scale(0.2);
+  pScope.draw_image('firework',0,0, animation.wave(1));//draw bang
 }
 
 //TODO: add twinkling stars in the background..
